@@ -9,6 +9,7 @@ import Contact from './Component/Contact/Index'
 import HomeCard from './Component/Card/Index'
 import AddProduct from './Edit/AddProduct/Index';
 import Card from './Edit/Card/Index'
+import Feedback from './Edit/feedback/Index'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Head />
            <AddProduct/>
            <Card/>
+           <Feedback/>
             <About />  <Footer/>
           </>
           
