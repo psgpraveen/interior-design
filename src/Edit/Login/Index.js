@@ -4,14 +4,15 @@ import { useNavigate} from "react-router-dom";
 
 const Index = () => {
   const navigate = useNavigate();
- const url=process.env.FetchUrl+ '/signin' || "http://localhost:5000/signin"
-  const [mobile, setmobile] = useState('');
+  // const url = `${process.env.REACT_APP_FETCH_URL}/signin`   
+  const url = process.env.REACT_APP_FETCH_URL ? `${process.env.REACT_APP_FETCH_URL}signin` : "http://localhost:5000/signin";  
+   const [mobile, setmobile] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); // State to hold error messages
   const [success, setSuccess] = useState(false); // State to indicate successful login
 
   useEffect(() => {
-    console.log("mobile>>>>" + mobile, "pass?>>>>>" + password);
+    console.log('Fetch URL:', process.env.REACT_APP_FETCH_URL);
   }, [mobile, password]);
 
   const login = async () => {
@@ -38,6 +39,7 @@ const Index = () => {
     } catch (error) {
       console.error("Error during login:", error);
       setError('An error occurred during login.');
+      alert("Error during login:", error)
     }
   };
   return (

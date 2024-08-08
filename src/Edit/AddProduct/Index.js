@@ -9,7 +9,7 @@ const Index = () => {
     price: '',
     imageFile: null,
   });
-  const url=process.env.FetchUrl+ '/addproduct' || "http://localhost:5000/signin"
+  const url = process.env.REACT_APP_FETCH_URL ? `${process.env.REACT_APP_FETCH_URL}addproduct` : "http://localhost:5000/addproduct";  
 
   const [imagePreview, setImagePreview] = useState(null);
 

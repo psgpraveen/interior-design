@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={
+        <Route path="/interior-design" element={
           <>
             <Header />
             <Intro />
