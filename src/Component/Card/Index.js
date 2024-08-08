@@ -43,7 +43,7 @@ const Index = () => {
               <h3 className="text-lg font-bold text-gray-800">{product.ProductName}</h3>
               <p className="text-gray-600 mt-2">{product.Description}</p>
               <div className="mt-4 flex items-center flex-wrap gap-2">
-                <h4 className="text-lg font-bold text-gray-800">${product.Price}</h4>
+                <h4 className="text-lg font-bold text-gray-800">₹ {product.Price}</h4>
                 
               </div>
             </div>
