@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './Component/Header/Index';
+import Head from './Edit/Header/Index'
 import Footer from './Component/Footer/Index'
 import Intro from './Component/Intro/Index';
 import About from './Component/About/Index';
@@ -27,7 +28,7 @@ function App() {
         } />
         <Route path="/login" element={
           <>
-            <Header />
+            <Head />
             <Login />
             <About />  <Footer/>
           </>
@@ -35,7 +36,7 @@ function App() {
         } />
         <Route path="/home" element={
           <>
-            <Header />
+            <Head />
            <AddProduct/>
            <Card/>
             <About />  <Footer/>
