@@ -9,6 +9,7 @@ const Index = () => {
     price: '',
     imageFile: null,
   });
+  const url=process.env.FetchUrl+ '/addproduct' || "http://localhost:5000/signin"
 
   const [imagePreview, setImagePreview] = useState(null);
 
@@ -71,7 +72,7 @@ const handleImageChange = (e) => {
   }
     // Submit form data to the server
     try {
-      const response = await axios.post("http://localhost:5000/addproduct",  formData, {
+      const response = await axios.post(url,  formData, {
         headers: {
           'Content-Type': 'multipart/form-data',        },
       });

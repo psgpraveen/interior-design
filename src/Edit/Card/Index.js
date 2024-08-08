@@ -3,10 +3,11 @@ import axios from 'axios';
 
 const Index = () => {
   const [products, setProducts] = useState([]);
+  const url=process.env.FetchUrl || "http://localhost:5000/signin"
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/'); // Use GET request
+      const response = await axios.get(url); // Use GET request
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -15,7 +16,7 @@ const Index = () => {
 
   const deleteProduct = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/products/${id}`);
+      await axios.delete(url+`/products/${id}`);
       // Filter out the deleted product from the state
       setProducts(products.filter(product => product._id !== id));
     } catch (error) {

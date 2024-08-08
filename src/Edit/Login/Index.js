@@ -4,7 +4,7 @@ import { useNavigate} from "react-router-dom";
 
 const Index = () => {
   const navigate = useNavigate();
-
+ const url=process.env.FetchUrl+ '/signin' || "http://localhost:5000/signin"
   const [mobile, setmobile] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); // State to hold error messages
@@ -16,7 +16,7 @@ const Index = () => {
 
   const login = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/signin', {
+      const response = await axios.post(url, {
         mobileNo: mobile, // Assuming mobile corresponds to mobileNo in your backend
         password: password,
       });
