@@ -8,6 +8,7 @@ const Index = () => {
     Email: '',
     Message: ''
   });
+  const url = process.env.REACT_APP_FETCH_URL ? `${process.env.REACT_APP_FETCH_URL}feedback` : "http://localhost:5000/feedback";  
 
   // Update state when form values change
   const handleChange = (e) => {
@@ -22,7 +23,7 @@ const Index = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); 
     try {
-      const response = await axios.post('http://localhost:5000/feedback', formData);
+      const response = await axios.post(url, formData);
       console.log('Feedback submitted:', response.data);
       alert('Feedback submitted successfully!');
       

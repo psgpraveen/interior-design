@@ -4,12 +4,13 @@ import axios from 'axios';
 const FeedbackBlock = () => {
   const [feedback, setFeedback] = useState([]);
   const [loading, setLoading] = useState(true);
+  const url = process.env.REACT_APP_FETCH_URL ? `${process.env.REACT_APP_FETCH_URL}feedback` : "http://localhost:5000/feedback";  
 
   useEffect(() => {
     // Fetch feedback data from the server
     const fetchFeedback = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/feedback');
+        const response = await axios.get(url);
         setFeedback(response.data);
       } catch (error) {
         console.error('Error fetching feedback:', error);
@@ -23,7 +24,7 @@ const FeedbackBlock = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/feedback/${id}`);
+      await axios.delete(url+`/${id}`);
       setFeedback(feedback.filter(item => item._id !== id));
     } catch (error) {
       console.error('Error deleting feedback:', error);
