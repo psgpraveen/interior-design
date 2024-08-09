@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../Img/Logo.jpg'
+import logo from '../../Img/logo-4.png'
 
 const Index = () => {
   return (
@@ -47,7 +47,9 @@ const Index = () => {
           <h4 className="text-lg font-semibold mb-6 text-white">Contact Us</h4>
           <ul className="space-y-4">
             <li>
-              <a href="javascript:void(0)" className="text-gray-300 hover:text-white text-sm">sabrunnabi@gmail.com</a>
+              <a href="mailto:sabrunnabi@gmail.com" className="text-gray-300 hover:text-white text-sm">
+                sabrunnabi@gmail.com
+              </a>
             </li>
             <li>
               <a href="javascript:void(0)" className="text-gray-300 hover:text-white text-sm">+91-9930503098 / +91-9022221616</a>
@@ -58,7 +60,7 @@ const Index = () => {
           </ul>
         </div>
 
-        <div>
+        {/* <div>
           <h4 className="text-lg font-semibold mb-6 text-white">Information</h4>
           <ul className="space-y-4">
             <li>
@@ -66,7 +68,7 @@ const Index = () => {
             </li>
             
           </ul>
-        </div>
+        </div> */}
       </div>
 
       <p className='text-gray-300 text-sm mt-10'>© Handcrafted ❤ by <a href='https://psgpraveen.github.io/port/' target='_blank'

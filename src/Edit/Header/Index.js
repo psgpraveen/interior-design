@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../Img/Logo.jpg';
+import logo from '../../Img/logo-4.png';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -15,7 +15,7 @@ const Index = () => {
 
   return (
     <header className='shadow-md font-sans tracking-wide relative z-50'>
-      <section className='py-2 bg-[#007bff] text-white text-right px-10'>
+      <section className='py-2 bg-[#007bff] text-white text-right hidden md:block lg:block px-10'>
         <p className='text-sm'>
           <strong className="mx-3">Address:</strong>Plot No.25-A/G/4, Rd. No.12, Govandi, Mumbai-400 043
           <strong className="mx-3">Contact No:</strong>+91-9930503098 / +91-9022221616
@@ -24,7 +24,7 @@ const Index = () => {
     
       <div className='flex flex-wrap items-center justify-between gap-4 px-10 py-4 bg-white min-h-[70px]'>
         <a href="/interior-design">
-          <img src={logo} alt="logo" className='w-24' />
+          <img src={logo} alt="logo" className='lg:w-24 w-12' />
         </a>
     
         <div id="collapseMenu"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../Img/Logo.jpg';
+import logo from '../../Img/logo-4.png';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -14,8 +14,8 @@ const Index = () => {
   };
 
   return (
-    <header className='shadow-md font-sans tracking-wide relative z-50'>
-      <section className='py-2 bg-[#007bff] text-white text-right px-10'>
+    <header className='shadow-md font-sans tracking-wide relative z-50 '>
+      <section className='py-2 bg-[#007bff] text-white text-right hidden md:block lg:block px-10'>
         <p className='text-sm'>
           <strong className="mx-3">Address:</strong>Plot No.25-A/G/4, Rd. No.12, Govandi, Mumbai-400 043
           <strong className="mx-3">Contact No:</strong>+91-9930503098 / +91-9022221616
@@ -23,8 +23,8 @@ const Index = () => {
       </section>
     
       <div className='flex flex-wrap items-center justify-between gap-4 px-10 py-4 bg-white min-h-[70px]'>
-        <a href="javascript:void(0)">
-          <img src={logo} alt="logo" className='w-24' />
+        <a href="/interior-design">
+          <img src={logo} alt="logo" className='lg:w-24 w-12' />
         </a>
     
         <div id="collapseMenu" className={`lg:flex lg:gap-x-5 ${isMenuOpen ? 'block' : 'hidden'} max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50`}>
@@ -37,8 +37,8 @@ const Index = () => {
     
           <ul className='lg:flex lg:gap-x-5 max-lg:space-y-3'>
             <li className='mb-6 hidden max-lg:block'>
-              <a href="javascript:void(0)">
-                <img src={logo} alt="logo" className='w-36' />
+              <a href="/interior-design">
+                <img src={logo} alt="logo" className="lg:w-30 w-18 drop-shadow" />
               </a>
             </li>
             <li className='max-lg:border-b max-lg:py-3 px-3'>
