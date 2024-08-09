@@ -6,7 +6,7 @@ const Index = () => {
     <div id='intro' class="bg-gray-800 w-full font-[sans-serif]">
       <div class="grid md:grid-cols-2 items-center md:max-h-[36rem] overflow-hidden ">
         <div class="p-8">
-          <h1 class="sm:text-4xl text-2xl font-bold text-white">Readymadeui <span class="text-orange-400">Jumbotron Design</span></h1>
+          <h1 class="sm:text-4xl text-2xl font-bold text-white">Your Home <span class="text-orange-400">Our Design</span></h1>
           <p class="mt-4 text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
             tempus blandit, metus mi consectetur nibh, a pharetra felis turpis vitae ligula. Etiam laoreet velit nec neque
             ultrices, non consequat mauris tincidunt.</p>
