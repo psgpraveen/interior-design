@@ -6,7 +6,7 @@ const Index = () => {
     <footer className="bg-gray-900 p-10 font-[sans-serif] tracking-wide">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="lg:flex lg:items-center">
-          <a href="/">
+          <a href="/interior-design/">
             <img src={logo} alt="logo" className="w-32 " />
           </a>
         </div>

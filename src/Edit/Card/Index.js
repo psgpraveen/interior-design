@@ -30,8 +30,9 @@ const Index = () => {
 
   return (
     <div id='Feature' className="font-sans p-4 mx-auto lg:max-w-5xl md:max-w-3xl sm:max-w-full">
-      <h2 className="text-4xl font-extrabold text-gray-800 mb-12">Interior gallery</h2>
-
+<h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text shadow-lg rounded-lg p-4">
+  INTERIOR GALLERY
+</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
           <div
