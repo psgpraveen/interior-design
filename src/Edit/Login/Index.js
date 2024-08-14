@@ -28,7 +28,6 @@ const Index = () => {
           setError(response.data);
           alert(error)
         } else {
-          console.log("Login successful", response.data);
           alert("Login successful", response.data)
           navigate('/home');
           setError("Login successful", response.data);
