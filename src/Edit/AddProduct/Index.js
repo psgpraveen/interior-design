@@ -1,80 +1,85 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Compressor from 'compressorjs';
+
 const Index = () => {
   // State for form inputs
   const [product, setProduct] = useState({
     ProductName: '',
     description: '',
     price: '',
+    categories: '',
     imageFile: null,
   });
-  const url = process.env.REACT_APP_FETCH_URL ? `${process.env.REACT_APP_FETCH_URL}addproduct` : "http://localhost:5000/addproduct";  
+
+  const url = process.env.REACT_APP_FETCH_URL
+    ? `${process.env.REACT_APP_FETCH_URL}addproduct`
+    : 'http://localhost:5000/addproduct';
 
   const [imagePreview, setImagePreview] = useState(null);
 
   // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
+
     setProduct((prevProduct) => ({
       ...prevProduct,
       [name]: value,
     }));
+
+
   };
 
   // Handle image file change
-  // Modify handleImageChange to store the file
-const handleImageChange = (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    new Compressor(file, {
-      quality: 0.6, // Adjust quality as needed
-      maxWidth: 1024, // Adjust max width if needed
-      maxHeight: 1024, // Adjust max height if needed
-      success: (compressedFile) => {
-    setProduct((prevProduct) => ({
-      ...prevProduct,
-      imageFile: compressedFile,  // Store the file for upload
-    }));
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      new Compressor(file, {
+        quality: 0.3, // Adjust quality as needed
+        maxWidth: 1024, // Adjust max width if needed
+        maxHeight: 1024, // Adjust max height if needed
+        success: (compressedFile) => {
+          setProduct((prevProduct) => ({
+            ...prevProduct,
+            imageFile: compressedFile, // Store the file for upload
+          }));
 
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setImagePreview(reader.result);
-    };
-    reader.readAsDataURL(compressedFile);
-  },
-  error(err) {
-    console.error('Image compression error:', err);
-  },
-});
-}
-};
-  
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            setImagePreview(reader.result);
+          };
+          reader.readAsDataURL(compressedFile);
+        },
+        error(err) {
+          console.error('Image compression error:', err);
+        },
+      });
+    }
+  };
 
   // Handle form submission
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Perform validation if needed
     console.log(product);
-    if (!product.ProductName || !product.price) {
+    if (!product.ProductName || !product.price || !product.categories) {
       alert('Please fill in all required fields.');
       return;
     }
     const formData = new FormData();
-  formData.append('ProductName', product.ProductName);
-  formData.append('Description', product.description);
-  formData.append('Price', product.price);
-  // Append the file if it exists
-  if (product.imageFile) {
-    // formData.append('ProductImage', product.imageFile);
-    formData.append('ProductImage', product.imageFile);
-  }
+    formData.append('ProductName', product.ProductName);
+    formData.append('Description', product.description);
+    formData.append('Price', product.price);
+    formData.append('categories', product.categories); 
+    if (product.imageFile) {
+      formData.append('ProductImage', product.imageFile);
+    }
     // Submit form data to the server
     try {
-      const response = await axios.post(url,  formData, {
+      const response = await axios.post(url, formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',        },
+          'Content-Type': 'multipart/form-data',
+        },
       });
       console.log('Product added:', response.data);
       alert('Product added successfully');
@@ -83,7 +88,8 @@ const handleImageChange = (e) => {
         ProductName: '',
         description: '',
         price: '',
-        imageFile: null // Reset image file in the state
+        categories: '',
+        imageFile: null,
       });
       setImagePreview(null);
     } catch (error) {
@@ -134,7 +140,6 @@ const handleImageChange = (e) => {
               <label className="text-sm text-gray-600" htmlFor="price">
                 Price:- (Rs. )
               </label>
-              
               <input
                 type="number"
                 id="price"
@@ -144,6 +149,33 @@ const handleImageChange = (e) => {
                 onChange={handleChange}
                 required
               />
+            </div>
+            <div className="mb-4">
+              <label className="text-sm text-gray-600" htmlFor="categories">
+                Categories
+              </label>
+              <select
+                id="categories"
+                name="categories"
+                className="w-full bg-gray-100 rounded border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                value={product.categories}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select a category</option>
+                <option value="Living room">Living room</option>
+                <option value="Kitchen">Kitchen</option>
+                <option value="Bedroom">Bedroom</option>
+                <option value="Bathroom">Bathroom</option>
+                <option value="Children's room">Children's room</option>
+                <option value="Home office">Home office</option>
+                <option value="Interior Designs">Interior Designs</option>
+                <option value="Home Design">Home Design</option>
+                <option value="Home Transformations">Home Transformations</option>
+                <option value="Furniture & Finishes">Furniture & Finishes</option>
+                <option value="Home Stylists">Home Stylists</option>
+                <option value="Lounge, Parlor, Salon">Lounge, Parlor, Salon</option>
+              </select>
             </div>
             <div className="mb-4">
               <label className="text-sm text-gray-600" htmlFor="imageFile">
