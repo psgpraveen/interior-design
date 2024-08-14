@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/interior-design/static/css/main.6bf69de5.css",
-    "main.js": "/interior-design/static/js/main.765286a2.js",
+    "main.css": "/interior-design/static/css/main.d86bbb5e.css",
+    "main.js": "/interior-design/static/js/main.a400cf56.js",
     "static/js/453.8ab44547.chunk.js": "/interior-design/static/js/453.8ab44547.chunk.js",
     "static/media/1.jpg": "/interior-design/static/media/1.14214fb4a7ff20fa4660.jpg",
-    "static/media/logo-4.png": "/interior-design/static/media/logo-4.3e092676c1bbc0f26d83.png",
+    "static/media/Logo.jpg": "/interior-design/static/media/Logo.f3b929bab1b5e31ab2a6.jpg",
+    "static/media/logo-4.jpg": "/interior-design/static/media/logo-4.2e71691e9ee2fc784971.jpg",
     "index.html": "/interior-design/index.html",
-    "main.6bf69de5.css.map": "/interior-design/static/css/main.6bf69de5.css.map",
-    "main.765286a2.js.map": "/interior-design/static/js/main.765286a2.js.map",
+    "main.d86bbb5e.css.map": "/interior-design/static/css/main.d86bbb5e.css.map",
+    "main.a400cf56.js.map": "/interior-design/static/js/main.a400cf56.js.map",
     "453.8ab44547.chunk.js.map": "/interior-design/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6bf69de5.css",
-    "static/js/main.765286a2.js"
+    "static/css/main.d86bbb5e.css",
+    "static/js/main.a400cf56.js"
   ]
 }
