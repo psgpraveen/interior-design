@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../Img/logo-4.png'
+import logo from '../../Img/logo-4.jpg'
 
 const Index = () => {
   return (

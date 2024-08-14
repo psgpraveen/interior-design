@@ -3,7 +3,7 @@ import Header from './Component/Header/Index';
 import Head from './Edit/Header/Index'
 import Footer from './Component/Footer/Index'
 import Intro from './Component/Intro/Index';
-import About from './Component/About/Index';
+// import About from './Component/About/Index';
 import Login from './Edit/Login/Index'
 import Contact from './Component/Contact/Index'
 import HomeCard from './Component/Card/Index'
@@ -21,7 +21,7 @@ function App() {
             <Header />
             <Intro />
             <HomeCard/>
-            <About />
+           
             <Contact/>
             <Footer/>
           </>
@@ -31,7 +31,7 @@ function App() {
           <>
             <Head />
             <Login />
-            <About />  <Footer/>
+           <Footer/>
           </>
           
         } />
@@ -41,7 +41,7 @@ function App() {
            <AddProduct/>
            <Card/>
            <Feedback/>
-            <About />  <Footer/>
+            <Footer/>
           </>
           
         } />

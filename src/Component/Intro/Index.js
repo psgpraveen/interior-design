@@ -7,8 +7,8 @@ const Index = () => {
       <div class="grid md:grid-cols-2 items-center md:max-h-[36rem] overflow-hidden ">
         <div class="p-8">
           <h1 class="sm:text-4xl text-2xl font-bold text-white">Your Home <span class="text-orange-400">Our Design</span></h1>
-          <p class="mt-4 text-sm text-gray-300">We believe that your home should reflect your unique style and personality. Our team of expert designers works closely with you to transform your vision into reality, creating spaces that are not only beautiful but also functional.</p>
-          <p class="mt-2 text-sm text-gray-300">Whether you're looking to revamp your living room, kitchen, or entire home, our innovative designs and attention to detail ensure a result that you'll love for years to come. Let us bring your dream space to life with our tailored design solutions.</p>
+          <p class="mt-4 text-sm text-gray-300">Transform your living room, kitchen, bedroom, bathroom, children's room, and home office with our customized interior design services.</p>
+          <p class="mt-2 text-sm text-gray-300">From home transformations to furniture & finishes, our expert stylists bring your dream spaces—like lounges, parlors, and salons—to life.</p>
           <button type="button"
             class="px-6 py-3 mt-8 rounded-md text-white text-sm tracking-wider border-none outline-none bg-orange-500 hover:bg-orange-600 "><a href='#contact'>Contact</a> </button>
         </div>
