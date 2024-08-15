@@ -136,7 +136,7 @@ const Index = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4"> 
               <label className="text-sm text-gray-600" htmlFor="price">
                 Price:- (Rs. )
               </label>
