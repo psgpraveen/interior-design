@@ -27,7 +27,7 @@ const Index = () => {
 
   const deleteProduct = async (id) => {
     try {
-      await axios.delete(`${url}/products/${id}`);
+      await axios.delete(`${url}products/${id}`);
       // Filter out the deleted product from the state
       setProducts(products.filter(product => product._id !== id));
     } catch (error) {
@@ -71,9 +71,11 @@ const Index = () => {
           </div>
         </div>
       </div>
-
-      {loading && <div className="text-center text-gray-600">Loading products...</div>}
-      {error && <div className="text-center text-red-600">{error}</div>}
+      {loading && (
+  <div className="flex justify-center items-center my-8">
+    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-75"></div>
+  </div>
+)}      {error && <div className="text-center text-red-600">{error}</div>}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
@@ -81,11 +83,11 @@ const Index = () => {
             key={product._id}
             className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all"
           >
-            <div className="relative w-full h-60"> {/* Fixed height for the image container */}
+            <div className="relative w-full h-60">
               <img
-                src={`data:image/jpeg;base64,${product.ProductImage}`} // Use base64 image string
+                src={`data:image/jpeg;base64,${product.ProductImage}`} 
                 alt={product.ProductName}
-                className="h-full w-full object-cover" // Ensure image covers the container
+                className="h-full w-full object-cover" 
               />
             </div>
 
