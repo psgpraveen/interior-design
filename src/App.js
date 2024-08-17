@@ -32,7 +32,7 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/home" element={<ProtectedRoute element={() => (
+        <Route path="/home" element={<ProtectedRoute  element={() => (
           <>
             <Head />
             <AddProduct />

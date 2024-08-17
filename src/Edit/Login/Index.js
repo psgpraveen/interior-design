@@ -33,7 +33,7 @@ const Index = () => {
           
           if (token) {
             localStorage.setItem('authToken', token);
-            navigate('/home', { state: { userData: response.data } });
+            navigate('/home', { state: { userData: response.data ,token } });
             setSuccess(true);
           } else {
             setError("Token not received");

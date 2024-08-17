@@ -24,7 +24,7 @@ const Index = () => {
 
       <div className='flex flex-wrap items-center justify-between gap-4 px-5 lg:px-10 md:px-10 py-4 bg-white min-h-[70px]'>
         <a href="/interior-design" className='flex items-center'>
-          <img src={logo} alt="logo" className='lg:w-24 w-12' />
+          <img src={logo} alt="logo" className='lg:w-16 w-12' />
           <span className='ml-3 text-xl lg:text-2xl font-bold text-[#007bff]'>
             Interior-Design
           </span>

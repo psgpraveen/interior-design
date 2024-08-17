@@ -23,8 +23,10 @@ const Index = () => {
       </section>
     
       <div className='flex flex-wrap items-center justify-between gap-4 px-10 py-4 bg-white min-h-[70px]'>
-        <a href="/interior-design">
-          <img src={logo} alt="logo" className='lg:w-24 w-12' />
+        <a href="/interior-design"  className='flex items-center' onClick={() => localStorage.removeItem('authToken')}>
+          <img src={logo} alt="logo" className='lg:w-16 w-12' />  <span className='ml-3 text-xl lg:text-2xl font-bold text-[#007bff]'>
+            Interior-Design
+          </span>
         </a>
     
         <div id="collapseMenu"
@@ -43,7 +45,10 @@ const Index = () => {
               </a>
             </li>
             <li className='max-lg:border-b max-lg:py-3 px-3'>
-              <a href='/interior-design/' className='hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]' onClick={closeMenu}>Home</a>
+              <a href='/interior-design/'  className='hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]'  onClick={() => {
+    localStorage.removeItem('authToken');
+    closeMenu();
+  }}>Home</a>
             </li>
             <li className='max-lg:border-b max-lg:py-3 px-3'>
               <a href='#Feature' className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]' onClick={closeMenu}>Feature</a>

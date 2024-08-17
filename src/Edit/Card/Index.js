@@ -67,15 +67,25 @@ const Index = () => {
             <option value="Lounge, Parlor, Salon" className="text-gray-700">💇 Lounge, Parlor, Salon</option>
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7 10l5 5 5-5H7z"/></svg>
+            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7 10l5 5 5-5H7z" /></svg>
           </div>
         </div>
       </div>
-      {loading && (
-  <div className="flex justify-center items-center my-8">
-    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-75"></div>
-  </div>
-)}      {error && <div className="text-center text-red-600">{error}</div>}
+      {loading ? (
+        <div className="flex justify-center items-center my-8">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-75"></div>
+        </div>
+      ) : error ? <div className="text-center text-red-600">{error}</div> : products.length===0?<div className="flex flex-col items-center justify-center h-64 text-center">
+      <div className="text-red-500 text-4xl font-bold mb-4">
+        😕
+      </div>
+      <div className="text-gray-700 font-semibold text-xl">
+        Data not found
+      </div>
+      <div className="text-gray-500 mt-2">
+        Sorry, we couldn't find the data you're looking for. Please try again later.
+      </div>
+    </div>:
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
@@ -85,9 +95,9 @@ const Index = () => {
           >
             <div className="relative w-full h-60">
               <img
-                src={`data:image/jpeg;base64,${product.ProductImage}`} 
+                src={`data:image/jpeg;base64,${product.ProductImage}`}
                 alt={product.ProductName}
-                className="h-full w-full object-cover" 
+                className="h-full w-full object-cover"
               />
             </div>
 
@@ -107,7 +117,7 @@ const Index = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div>}
     </div>
   );
 };

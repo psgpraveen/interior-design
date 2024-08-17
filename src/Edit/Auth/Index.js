@@ -1,14 +1,21 @@
-// src/Edit/Auth/Index.js
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import React  from 'react';
+import { Navigate,useLocation  } from 'react-router-dom';
 
 const isAuthenticated = () => {
-  // Replace this with your actual authentication check
-  return !!localStorage.getItem('authToken'); // Make sure this matches your token name
+  return !!localStorage.getItem('authToken'); 
 };
 
 const ProtectedRoute = ({ element: Component }) => {
-  return isAuthenticated() ? <Component /> : <Navigate to="/login" />;
+  const location = useLocation();
+  const tokenFromProps = location.state?.token; 
+  const localToken = localStorage.getItem('authToken');
+
+
+  if (!isAuthenticated() || localToken !== tokenFromProps) {
+    return <Navigate to="/login" />;
+  }
+
+  return <Component />;
 };
 
 export default ProtectedRoute;
