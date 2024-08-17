@@ -7,7 +7,6 @@ import ProtectedRoute from './Edit/Auth/Index';
 import Login from './Edit/Login/Index';
 import Contact from './Component/Contact/Index';
 import HomeCard from './Component/Card/Index';
-import AddProduct from './Edit/AddProduct/Index';
 import Card from './Edit/Card/Index';
 import Feedback from './Edit/feedback/Index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -35,7 +34,6 @@ function App() {
         <Route path="/home" element={<ProtectedRoute  element={() => (
           <>
             <Head />
-            <AddProduct />
             <Card />
             <Feedback />
             <Footer />

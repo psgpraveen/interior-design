@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Compressor from 'compressorjs';
 
-const Index = () => {
+const Index = ({fetchProducts}) => {
   // State for form inputs
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState({
@@ -91,6 +91,7 @@ const Index = () => {
         imageFile: null,
       });
       setImagePreview(null);
+      fetchProducts();
     } catch (error) {
       if (error.response && error.response.data === 'Product Already Exists') {
         alert('A product with this name already exists. Please choose a different name.');

@@ -19,7 +19,7 @@ const Index = () => {
       });
       setProducts(response.data);
       setLoading(false)
-      setError(null); // Clear any previous errors
+      setError(null); 
     } catch (error) {
       console.error('Error fetching products:', error);
       setError('Failed to fetch products.');
@@ -28,7 +28,7 @@ const Index = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, [category]); // Fetch products when category changes
+  }, [category]);
 
   return (
     <div id='Feature' className="font-sans p-4 mx-auto lg:max-w-5xl md:max-w-3xl sm:max-w-full">
