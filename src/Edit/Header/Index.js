@@ -70,7 +70,7 @@ const Index = () => {
               </a>
             </li>
             <li className="max-lg:border-b max-lg:py-3 px-3">
-              <li className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]" onClick={() => {
+              <li className="hover:text-[#007bff] cursor-pointer text-[#333] block font-bold text-[15px]" onClick={() => {
                 handleFeedbackClick();
                 document.getElementById("Feature").scrollIntoView({ behavior: 'smooth' });
               }}>
@@ -78,7 +78,7 @@ const Index = () => {
               </li>
             </li>
             <li className="max-lg:border-b max-lg:py-3 px-3">
-              <li className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]" onClick={() => {
+              <li className="hover:text-[#007bff] text-[#333] cursor-pointer block font-bold text-[15px]" onClick={() => {
                 closeMenu();
                 document.getElementById("feedback1").scrollIntoView({ behavior: 'smooth' });
 

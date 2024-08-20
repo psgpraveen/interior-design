@@ -172,23 +172,23 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
-          <div className="flex justify-center mt-8 gap-4">
-            <button
-              onClick={handlePrevPage}
-              disabled={page === 1}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50"
-            >
-              Back
-            </button>
-            <button
-              onClick={handleNextPage}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-            >
-              Next
-            </button>
-          </div>
+        
         </>
-      )}
+      )}  <div className="flex justify-center mt-8 gap-4">
+      <button
+        onClick={handlePrevPage}
+        disabled={page === 1}
+        className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50"
+      >
+        Back
+      </button>
+      <button
+        onClick={handleNextPage}
+        className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+      >
+        Next
+      </button>
+    </div>
     </div>
   );
 };
