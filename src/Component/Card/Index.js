@@ -62,7 +62,7 @@ const Index = () => {
 
   const fetchProducts = async () => {
     try {
-      setLoading(true);
+      setLoading(true);scrollToFeatured();
       const response = await axios.get(url, {
         params: {
           category: category,
