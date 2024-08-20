@@ -81,13 +81,15 @@ const Index = () => {
   useEffect(() => {
     fetchProducts();
   }, [category, page]);
-
+  const scrollToFeatured = () => {
+    document.getElementById("feat").scrollIntoView({ behavior: 'smooth' });
+  };
   const handleNextPage = () => {
-    setPage((prevPage) => prevPage + 1);
+    setPage((prevPage) => prevPage + 1);scrollToFeatured();
   };
 
   const handlePrevPage = () => {
-    setPage((prevPage) => Math.max(prevPage - 1, 1));
+    setPage((prevPage) => Math.max(prevPage - 1, 1));scrollToFeatured();
   };
 
   return (
@@ -102,6 +104,15 @@ const Index = () => {
         INTERIOR GALLERY
       </motion.h2>
       <CategorySelector category={category} setCategory={setCategory} />
+      <motion.h3
+        variants={fade} id='feat'
+        initial="initial"
+        animate="animate"
+        viewport={{ once: true }}
+        className="text-2xl font-bold text-center mt-8 mb-4 p-4 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-transparent bg-clip-text shadow-lg rounded-lg"
+      >
+        Featured Products
+      </motion.h3>
 
       {loading ? (
         <div className="flex justify-center items-center h-64">

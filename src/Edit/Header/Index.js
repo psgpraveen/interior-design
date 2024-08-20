@@ -10,7 +10,7 @@ const Index = () => {
   };
   const handleFeedbackClick = () => {
     const token = localStorage.getItem('authToken'); // Retrieve token from localStorage
-    console.log('Token:', token); 
+    console.log('Token:', token);
     closeMenu();
   };
   const closeMenu = () => {
@@ -63,20 +63,28 @@ const Index = () => {
                 onClick={() => {
                   localStorage.removeItem('authToken');
                   closeMenu();
+
                 }}
               >
                 Home
               </a>
             </li>
             <li className="max-lg:border-b max-lg:py-3 px-3">
-              <a href="#Feature" className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]" onClick={handleFeedbackClick}>
-                Feature
-              </a>
+              <li className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]" onClick={() => {
+                handleFeedbackClick();
+                document.getElementById("Feature").scrollIntoView({ behavior: 'smooth' });
+              }}>
+                Categories
+              </li>
             </li>
             <li className="max-lg:border-b max-lg:py-3 px-3">
-              <a href="#feedback1" className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]"  onClick={closeMenu}>
+              <li className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]" onClick={() => {
+                closeMenu();
+                document.getElementById("feedback1").scrollIntoView({ behavior: 'smooth' });
+
+              }}>
                 Feedback
-              </a>
+              </li>
             </li>
             <li className="max-lg:border-b max-lg:py-3 px-3">
               <Link to="/login">

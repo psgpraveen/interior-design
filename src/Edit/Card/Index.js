@@ -92,13 +92,15 @@ const Index = () => {  const [page, setPage] = useState(1);
   }, [category, page]);
 
   const handleNextPage = () => {
-    setPage((prevPage) => prevPage + 1);
+    setPage((prevPage) => prevPage + 1);scrollToFeatured();
   };
 
   const handlePrevPage = () => {
-    setPage((prevPage) => Math.max(prevPage - 1, 1));
+    setPage((prevPage) => Math.max(prevPage - 1, 1));scrollToFeatured();
   };
-
+  const scrollToFeatured = () => {
+    document.getElementById("feat").scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <>
       <AddProduct fetchProducts={fetchProducts} />
@@ -107,6 +109,16 @@ const Index = () => {  const [page, setPage] = useState(1);
           INTERIOR GALLERY
         </h2>
         <CategorySelector category={category} setCategory={setCategory} />
+        <motion.h3
+  variants={fade}
+  initial="initial"  id='feat'
+  animate="animate"
+  viewport={{ once: true }}
+  className="text-2xl font-bold text-center mt-8 mb-4 p-4 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-transparent bg-clip-text shadow-lg rounded-lg"
+>
+  Featured Products
+</motion.h3>
+
         {loading ? (
           <div className="flex justify-center items-center my-8">
             <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-75"></div>
