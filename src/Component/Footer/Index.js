@@ -1,6 +1,18 @@
 import React from 'react'
 import logo from '../../Img/logo-4.jpg'
+import { motion } from "framer-motion";
 
+const fade = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1 },
+  },
+};
 const Index = () => {
   return (
     <footer className="bg-gray-900 p-10 font-[sans-serif] tracking-wide">
@@ -44,31 +56,30 @@ const Index = () => {
         </div>
 
         <div>
-          <h4 className="text-lg font-semibold mb-6 text-white">Contact Us</h4>
+          <motion.h4  variants={fade}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}className="text-lg font-semibold mb-6 text-white">Contact Us</motion.h4>
           <ul className="space-y-4">
             <li>
-              <a href="mailto:sabrunnabi@gmail.com" className="text-gray-300 hover:text-white text-sm">
-                sabrunnabi@gmail.com
+              <a variants={fade}
+            
+             href="mailto:sabrunnabi@gmail.com" className="text-gray-300 hover:text-white text-sm">
+               <motion.h6 initial="initial" variants={fade}
+            whileInView="animate"> sabrunnabi@gmail.com</motion.h6>
               </a>
             </li>
             <li>
-              <a href="javascript:void(0)" className="text-gray-300 hover:text-white text-sm">+91-9930503098 / +91-9022221616</a>
+              <motion.h5 initial="initial"
+            whileInView="animate" variants={fade} className="text-gray-300 hover:text-white text-sm">+91-9930503098 / +91-9022221616</motion.h5>
             </li>
             <li>
-              <a href="javascript:void(0)" className="text-gray-300 hover:text-white text-sm">Plot No.25-A/G/4, Rd. No.12, Govandi, Mumbai-400 043</a>
+              <a href="javascript:void(0)" className="text-gray-300 hover:text-white text-sm"><motion.h6 variants={fade} initial='initial' whileInView='animate'>Plot No.25-A/G/4, Rd. No.12, Govandi, Mumbai-400 043</motion.h6></a>
             </li>
           </ul>
         </div>
 
-        {/* <div>
-          <h4 className="text-lg font-semibold mb-6 text-white">Information</h4>
-          <ul className="space-y-4">
-            <li>
-              <a href="javascript:void(0)" className="text-gray-300 hover:text-white text-sm">About Us</a>
-            </li>
-            
-          </ul>
-        </div> */}
+       
       </div>
 
       <p className='text-gray-300 text-sm mt-10'>© Handcrafted ❤ by <a href='https://psgpraveen.github.io/port/' target='_blank'
