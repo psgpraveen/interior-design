@@ -129,7 +129,7 @@ const Index = () => {  const [page, setPage] = useState(1);
           <div  className="flex flex-col items-center justify-center h-64 text-center">
             <div  className="text-red-500 animate-bounce text-4xl font-bold mb-4">😕</div>
             <div className="text-gray-700 font-semibold text-xl">Data not found</div>
-            <div className="text-gray-500 mt-2">Sorry, we couldn't find the data you're looking for. Please try again later.</div>
+            <div className="text-gray-500 mt-2">Sorry, we couldn't find the data you're looking for.</div>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
