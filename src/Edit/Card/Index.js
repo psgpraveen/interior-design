@@ -28,13 +28,13 @@ const fade = {
     transition: { duration: 1 },
   },
 };
-const CategorySelector = ({ category, setCategory }) => {
+const CategorySelector = ({ category, setCategory,scrollToFeatured }) => {
   return (
     <div className="grid grid-cols-3  sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-6 gap-4 py-8">
       {categories.map((cat) => (
         <motion.div
           key={cat.value}
-          onClick={() => setCategory(cat.value)}
+          onClick={() => {setCategory(cat.value); scrollToFeatured();}}
           className={`cursor-pointer text-center p-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-blue-200
           ${category === cat.value ? 'bg-blue-200' : 'bg-gray-100'}`}
           style={{ transition: 'transform 0.3s, background-color 0.3s' }}
@@ -62,6 +62,7 @@ const Index = () => {  const [page, setPage] = useState(1);
   const fetchProducts = async () => {
     try {
       setLoading(true);
+     
       const response = await axios.get(url, {
         params: {
           category: category,page:page
@@ -108,7 +109,7 @@ const Index = () => {  const [page, setPage] = useState(1);
         <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text shadow-lg rounded-lg p-4">
           INTERIOR GALLERY
         </h2>
-        <CategorySelector category={category} setCategory={setCategory} />
+        <CategorySelector category={category} setCategory={setCategory} scrollToFeatured={scrollToFeatured} />
         <motion.h3
   variants={fade}
   initial="initial"  id='feat'
