@@ -1,7 +1,6 @@
-import React, { useState,createContext, useContext } from 'react';
+import React, { useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-const UserContext = createContext();
 
 const Index = () => {
   const navigate = useNavigate();

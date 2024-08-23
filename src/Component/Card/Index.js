@@ -138,7 +138,7 @@ const Index = () => {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1  overflow-hidden sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product) => (
               <motion.div
                 key={product._id}
@@ -147,10 +147,10 @@ const Index = () => {
                 initial="initial"
                 whileInView="animate"
               >
-                <div className="w-full aspect-w-16 aspect-h-8 lg:h-80">
+                <div className="w-full aspect-w-16 overflow-hidden aspect-h-8 lg:h-80">
                   <motion.img
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 1.3 }}
                     variants={fade}
                     initial="initial"
                     whileInView="animate"

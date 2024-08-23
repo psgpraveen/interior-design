@@ -75,12 +75,11 @@ const Index = ({fetchProducts}) => {
     }
     // Submit form data to the server
     try {
-      const response = await axios.post(url, formData, {
+       await axios.post(url, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log('Product added:', response.data);
       alert('Product added successfully');
       // Reset form fields
       setProduct({

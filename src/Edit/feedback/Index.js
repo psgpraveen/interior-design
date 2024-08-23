@@ -6,18 +6,17 @@ const FeedbackBlock = () => {
   const [loading, setLoading] = useState(true);
   const url = process.env.REACT_APP_FETCH_URL ? `${process.env.REACT_APP_FETCH_URL}feedback` : "http://localhost:5000/feedback";  
 
+  const fetchFeedback = async () => {
+    try {
+      const response = await axios.get(url);
+      setFeedback(response.data);
+    } catch (error) {
+      console.error('Error fetching feedback:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
   useEffect(() => {
-    // Fetch feedback data from the server
-    const fetchFeedback = async () => {
-      try {
-        const response = await axios.get(url);
-        setFeedback(response.data);
-      } catch (error) {
-        console.error('Error fetching feedback:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
 
     fetchFeedback();
   }, []);

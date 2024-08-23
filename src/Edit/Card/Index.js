@@ -28,13 +28,13 @@ const fade = {
     transition: { duration: 1 },
   },
 };
-const CategorySelector = ({ category, setCategory,scrollToFeatured }) => {
+const CategorySelector = ({ category, setCategory, scrollToFeatured }) => {
   return (
     <div className="grid grid-cols-3  sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-6 gap-4 py-8">
       {categories.map((cat) => (
         <motion.div
           key={cat.value}
-          onClick={() => {setCategory(cat.value); scrollToFeatured();}}
+          onClick={() => { setCategory(cat.value); scrollToFeatured(); }}
           className={`cursor-pointer text-center p-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-blue-200
           ${category === cat.value ? 'bg-blue-200' : 'bg-gray-100'}`}
           style={{ transition: 'transform 0.3s, background-color 0.3s' }}
@@ -50,7 +50,8 @@ const CategorySelector = ({ category, setCategory,scrollToFeatured }) => {
   );
 };
 
-const Index = () => {  const [page, setPage] = useState(1);
+const Index = () => {
+  const [page, setPage] = useState(1);
 
   const [category, setCategory] = useState('');
   const [products, setProducts] = useState([]);
@@ -62,10 +63,10 @@ const Index = () => {  const [page, setPage] = useState(1);
   const fetchProducts = async () => {
     try {
       setLoading(true);
-     
+
       const response = await axios.get(url, {
         params: {
-          category: category,page:page
+          category: category, page: page
         }
       });
       setProducts(response.data);
@@ -93,11 +94,11 @@ const Index = () => {  const [page, setPage] = useState(1);
   }, [category, page]);
 
   const handleNextPage = () => {
-    setPage((prevPage) => prevPage + 1);scrollToFeatured();
+    setPage((prevPage) => prevPage + 1); scrollToFeatured();
   };
 
   const handlePrevPage = () => {
-    setPage((prevPage) => Math.max(prevPage - 1, 1));scrollToFeatured();
+    setPage((prevPage) => Math.max(prevPage - 1, 1)); scrollToFeatured();
   };
   const scrollToFeatured = () => {
     document.getElementById("feat").scrollIntoView({ behavior: 'smooth' });
@@ -111,14 +112,14 @@ const Index = () => {  const [page, setPage] = useState(1);
         </h2>
         <CategorySelector category={category} setCategory={setCategory} scrollToFeatured={scrollToFeatured} />
         <motion.h3
-  variants={fade}
-  initial="initial"  id='feat'
-  animate="animate"
-  viewport={{ once: true }}
-  className="text-2xl font-bold text-center mt-8 mb-4 p-4 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-transparent bg-clip-text shadow-lg rounded-lg"
->
-  Featured Products
-</motion.h3>
+          variants={fade}
+          initial="initial" id='feat'
+          animate="animate"
+          viewport={{ once: true }}
+          className="text-2xl font-bold text-center mt-8 mb-4 p-4 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-transparent bg-clip-text shadow-lg rounded-lg"
+        >
+          Featured Products
+        </motion.h3>
 
         {loading ? (
           <div className="flex justify-center items-center my-8">
@@ -127,8 +128,8 @@ const Index = () => {  const [page, setPage] = useState(1);
         ) : error ? (
           <div className="text-center text-red-600">{error}</div>
         ) : products.length === 0 ? (
-          <div  className="flex flex-col items-center justify-center h-64 text-center">
-            <div  className="text-red-500 animate-bounce text-4xl font-bold mb-4">😕</div>
+          <div className="flex flex-col items-center justify-center h-64 text-center">
+            <div className="text-red-500 animate-bounce text-4xl font-bold mb-4">😕</div>
             <div className="text-gray-700 font-semibold text-xl">Data not found</div>
             <div className="text-gray-500 mt-2">Sorry, we couldn't find the data you're looking for.</div>
           </div>
@@ -136,9 +137,9 @@ const Index = () => {  const [page, setPage] = useState(1);
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product) => (
               <motion.div
-              variants={fade}
-              initial="initial"
-              whileInView="animate"
+                variants={fade}
+                initial="initial"
+                whileInView="animate"
                 key={product._id}
                 className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all"
               >
@@ -200,20 +201,20 @@ const Index = () => {  const [page, setPage] = useState(1);
           </div>
         )}
       </div> <div className="flex justify-center mt-8 gap-4">
-            <button
-              onClick={handlePrevPage}
-              disabled={page === 1}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50"
-            >
-              Back
-            </button>
-            <button
-              onClick={handleNextPage}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-            >
-              Next
-            </button>
-          </div>
+        <button
+          onClick={handlePrevPage}
+          disabled={page === 1}
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50"
+        >
+          Back
+        </button>
+        <button
+          onClick={handleNextPage}
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+        >
+          Next
+        </button>
+      </div>
     </>
   );
 };
