@@ -200,7 +200,7 @@ const Index = () => {
             ))}
           </div>
         )}
-      </div> <div className="flex justify-center mt-8 gap-4">
+      </div> <div className="flex justify-center mt-12 gap-4">
         <button
           onClick={handlePrevPage}
           disabled={page === 1}
