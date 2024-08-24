@@ -12,9 +12,7 @@ const categories = [
   { label: 'Home office', value: 'Home office', icon: '💼' },
   { label: 'Interior Designs', value: 'Interior Designs', icon: '🎨' },
   { label: 'Home Design', value: 'Home Design', icon: '🏡' },
-  { label: 'Home Transformations', value: 'Home Transformations', icon: '🔄' },
   { label: 'Furniture & Finishes', value: 'Furniture & Finishes', icon: '🛋️' },
-  { label: 'Home Stylists', value: 'Home Stylists', icon: '💅' },
   { label: 'Lounge, Parlor, Salon', value: 'Lounge, Parlor, Salon', icon: '💇' },
 ];
 
@@ -44,7 +42,7 @@ const CategorySelector = ({ category, setCategory ,scrollToFeatured}) => {
           whileHover={{ scale: 1.1 }}
           animate={{ scale: 1 }}
         >
-          <div className="text-4xl mb-2 animate-bounce">{cat.icon}</div>
+          <div className="text-4xl mb-2 ">{cat.icon}</div>
           <h3 className="text-xs font-bold text-gray-700">{cat.label}</h3>
         </motion.div>
       ))}

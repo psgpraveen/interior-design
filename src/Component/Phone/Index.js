@@ -12,7 +12,7 @@ const Phone = () => {
     >
       {/* Phone Call Button */}
       <motion.a
-        href="tel:+917985942726"
+        href="tel:+919022221616"
         className="bg-gradient-to-r from-teal-400 to-blue-500 rounded-full p-4 shadow-lg"
         whileHover={{ scale: 1.2, rotate: 15 }}
         whileTap={{ scale: 0.9, rotate: -15 }}
@@ -23,7 +23,7 @@ const Phone = () => {
 
       {/* WhatsApp Button */}
       <motion.a
-        href="https://wa.me/917985942726"
+        href="https://wa.me/919930503098"
         className="bg-green-500 rounded-full p-4 shadow-lg"
         whileHover={{ scale: 1.2, rotate: 15 }}
         whileTap={{ scale: 0.9, rotate: -15 }}
