@@ -12,6 +12,7 @@ const categories = [
   { label: 'Home office', value: 'Home office', icon: '💼' },
   { label: 'Interior Designs', value: 'Interior Designs', icon: '🎨' },
   { label: 'Home Design', value: 'Home Design', icon: '🏡' },
+  { label: 'Other', value: '', icon: '🌐' },
  
   { label: 'Furniture & Finishes', value: 'Furniture & Finishes', icon: '🛋️' },
  
