@@ -8,6 +8,7 @@ import Login from './Edit/Login/Index';
 import Contact from './Component/Contact/Index';
 import HomeCard from './Component/Card/Index';
 import Phone from './Component/Phone/Index'
+import Err from './Component/Err/Index'
 import Why from './Component/WhyChooseUs/Index'
 import Card from './Edit/Card/Index';
 import Feedback from './Edit/feedback/Index';
@@ -17,7 +18,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={
+        <Route path="/interior-design" element={
           <>
             <Header />
             <Intro />
@@ -42,6 +43,13 @@ function App() {
             <Head />
             <Card />
             <Feedback />
+            <Footer />
+          </>
+        )} />} />
+        <Route path="*" element={<ProtectedRoute element={() => (
+          <>
+            <Header />
+           <Err/>
             <Footer />
           </>
         )} />} />
