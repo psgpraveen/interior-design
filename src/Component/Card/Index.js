@@ -14,6 +14,8 @@ const categories = [
   { label: 'Home Design', value: 'Home Design', icon: '🏡' },
   { label: 'Furniture & Finishes', value: 'Furniture & Finishes', icon: '🛋️' },
   { label: 'Lounge, Parlor, Salon', value: 'Lounge, Parlor, Salon', icon: '💇' },
+  { label: 'Other', value: ' ', icon: '🌐' },
+
 ];
 
 const fade = {

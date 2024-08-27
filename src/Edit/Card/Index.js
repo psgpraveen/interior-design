@@ -12,11 +12,9 @@ const categories = [
   { label: 'Home office', value: 'Home office', icon: '💼' },
   { label: 'Interior Designs', value: 'Interior Designs', icon: '🎨' },
   { label: 'Home Design', value: 'Home Design', icon: '🏡' },
-  { label: 'Other', value: '', icon: '🌐' },
- 
-  { label: 'Furniture & Finishes', value: 'Furniture & Finishes', icon: '🛋️' },
- 
+  { label: 'Furniture & Finishes', value: 'Furniture & Finishes', icon: '🛋️' },  
   { label: 'Lounge, Parlor, Salon', value: 'Lounge, Parlor, Salon', icon: '💇' },
+  { label: 'Other', value: 'other', icon: '🌐' },
 ];
 const fade = {
   initial: {
