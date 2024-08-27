@@ -23,7 +23,7 @@ const Phone = () => {
 
       {/* WhatsApp Button */}
       <motion.a
-        href="https://wa.me/919930503098"
+        href="https://wa.me/919022221616"
         className="bg-green-500 rounded-full p-4 shadow-lg"
         whileHover={{ scale: 1.2, rotate: 15 }}
         whileTap={{ scale: 0.9, rotate: -15 }}

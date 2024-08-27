@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../Img/logo-4.png';
 import { Link } from 'react-router-dom'
-import { animate, motion } from 'framer-motion'
+import {  motion } from 'framer-motion'
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

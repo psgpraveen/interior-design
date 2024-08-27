@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../Img/logo-4.jpg'
+import logo from '../../Img/logo-4.png'
 import { motion } from "framer-motion";
 
 const fade = {
@@ -19,7 +19,11 @@ const Index = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="lg:flex lg:items-center">
           <a href="/interior-design/">
-            <img src={logo} alt="logo" className="w-32 " />
+          <img 
+  src={logo} 
+  alt="logo" 
+  className="w-32 filter invert brightness-0" 
+/>
           </a>
         </div>
 
