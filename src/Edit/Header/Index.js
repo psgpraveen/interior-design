@@ -101,7 +101,7 @@ const Index = () => {
               whileHover={{ scale: 1.5 }}
               className="mb-6 hidden max-lg:block"
             >
-              <a href="/interior-design">
+              <a href="/">
                 <img src={logo} alt="Interior Design Logo" className="w-36" />
               </a>
             </motion.li>

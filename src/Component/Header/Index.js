@@ -81,7 +81,7 @@ const Index = () => {
             <motion.li initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }} whileHover={{ scale: 1.5 }} className='max-lg:border-b max-lg:py-3 px-3'>
-              <a href='/interior-design/' className='hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]' onClick={closeMenu}>Home</a>
+              <a href='/' className='hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]' onClick={closeMenu}>Home</a>
             </motion.li>
             <motion.li initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
