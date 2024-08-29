@@ -37,7 +37,7 @@ const Profile = () => {
                 name: profile.name,
                 email: profile.email,
                 phone: profile.phone,
-                address: profile.address,
+              
                 _id:_id,
             });
 
@@ -101,19 +101,7 @@ const Profile = () => {
                     <p className="text-gray-900">{profile.phone}</p>
                 )}
             </div>
-            <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Address</label>
-                {isEditing ? (
-                    <textarea
-                        name="address"
-                        value={profile.address}
-                        onChange={handleChange}
-                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                ) : (
-                    <p className="text-gray-900">{profile.address}</p>
-                )}
-            </div>
+           
             <div className="flex justify-between">
                 <button
                     onClick={handleEdit}
