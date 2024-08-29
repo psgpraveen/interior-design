@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../Img/logo-4.png'
+import logo from '../../Img/logo.png'
 import { motion } from "framer-motion";
 
 const fade = {
@@ -22,7 +22,7 @@ const Index = () => {
             <img
               src={logo}
               alt="logo"
-              className="w-32 filter invert brightness-0"
+              className="w-32 "
             />
           </a>
         </div>

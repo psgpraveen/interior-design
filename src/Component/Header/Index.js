@@ -24,10 +24,7 @@ const Index = () => {
     }
   }
   useEffect(() => {
-    checkScreenSize();
-    console.log(animat);
-    
-
+    checkScreenSize();    
   }, [checkScreenSize])
 
   return (
@@ -50,7 +47,7 @@ const Index = () => {
             transition={{ duration: 0.5 }}
             className='ml-3 text-xl lg:text-2xl font-bold text-[#007bff]'
           >
-            Interior-Design
+           Contractor
           </motion.span>
         </a>
 

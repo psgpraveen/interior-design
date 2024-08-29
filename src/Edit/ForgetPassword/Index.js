@@ -22,9 +22,7 @@ const Navigate=useNavigate();
     try {
      const response= await axios.post(`${url}send-otp`, { email });
      setMessage(response.data);
-      setStep(2);
-      console.log("data>>>>>>>>>>>>",response.data);
-      
+      setStep(2);      
       setError('');
     } catch (error) {
       setError("Something went wrong. Please try again.");
