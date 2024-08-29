@@ -11,7 +11,7 @@ const ForgotPassword = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false); // Loading state
 const Navigate=useNavigate();
-  const url = process.env.REACT_APP_FETCH_URL || 'http://localhost:5000';
+  const url = process.env.REACT_APP_FETCH_URL || 'http://localhost:5000/';
 
   // Helper function to handle errors
   const handleError = (error) => {
@@ -25,7 +25,7 @@ const Navigate=useNavigate();
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${url}/send-otp`, { email });
+      await axios.post(`${url}send-otp`, { email });
       setStep(2);
       setMessage("OTP sent to your email.");
       setError('');
@@ -57,7 +57,7 @@ const Navigate=useNavigate();
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${url}/reset-password`, { email, newPassword });
+      await axios.post(`${url}reset-password`, { email, newPassword });
       setMessage("Password reset successfully.");
       alert("Password reset successfully.")
       setError('');
