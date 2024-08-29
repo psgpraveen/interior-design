@@ -17,10 +17,10 @@ import Profile from './Edit/Profile/Index';
 import ForgetPassword from './Edit/ForgetPassword/Index';
 import HeaderForOther from './Edit/HeaderForOther/Index'
 
-
+import { Analytics } from "@vercel/analytics/react"
 function App() {
   return (
-    <Router>
+    <Router><Analytics/>
       <Routes>
         <Route path="/interior-design" element={
           <>
