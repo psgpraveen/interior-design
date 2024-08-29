@@ -13,7 +13,6 @@ const Profile = () => {
         name: userData.user.name,
         email: userData.user.email,
         phone: userData.user.mobileNo,
-        address: '123 Main St, City, Country',
     });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');

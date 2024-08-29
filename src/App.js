@@ -22,7 +22,7 @@ function App() {
   return (
     <Router><Analytics/>
       <Routes>
-        <Route path="/interior-design" element={
+        <Route path="/" element={
           <>
             <Header />
             <Intro />

@@ -40,7 +40,7 @@ const Index = () => {
       </section>
 
       <div className='flex flex-wrap items-center justify-between gap-4 px-5 lg:px-10 md:px-10 py-4 bg-white min-h-[70px]'>
-        <a href="/interior-design" className='flex items-center'>
+        <a href="/" className='flex items-center'>
           <motion.img initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }} src={logo} alt="logo" className='lg:w-16 w-12' />

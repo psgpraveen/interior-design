@@ -13,24 +13,22 @@ const ForgotPassword = () => {
 const Navigate=useNavigate();
   const url = process.env.REACT_APP_FETCH_URL || 'http://localhost:5000/';
 
-  // Helper function to handle errors
-  const handleError = (error) => {
-    console.error(error);
-    setError("Something went wrong. Please try again.");
-    setMessage('');
-  };
+ 
 
   // Handle email submission
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${url}send-otp`, { email });
+     const response= await axios.post(`${url}send-otp`, { email });
+     setMessage(response.data);
       setStep(2);
-      setMessage("OTP sent to your email.");
+      console.log("data>>>>>>>>>>>>",response.data);
+      
       setError('');
     } catch (error) {
-      handleError(error);
+      setError("Something went wrong. Please try again.");
+    setMessage('');
     } finally {
       setLoading(false);
     }
@@ -46,7 +44,8 @@ const Navigate=useNavigate();
       setMessage("OTP verified. Set a new password.");
       setError('');
     } catch (error) {
-      handleError(error);
+      setError("Something went wrong. Please try again.");
+    setMessage('');
     } finally {
       setLoading(false);
     }
@@ -63,7 +62,8 @@ const Navigate=useNavigate();
       setError('');
       Navigate('/login')
     } catch (error) {
-      handleError(error);
+      setError("Something went wrong. Please try again.");
+    setMessage('');
     } finally {
       setLoading(false);
     }
