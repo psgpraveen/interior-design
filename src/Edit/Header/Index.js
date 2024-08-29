@@ -51,7 +51,7 @@ const Index = () => {
       </section>
 
       <div className="flex flex-wrap items-center justify-between gap-4 px-10 py-4 bg-white min-h-[70px]">
-        <a href="/interior-design" className="flex items-center" onClick={() => localStorage.removeItem('authToken')}>
+        <a href="/" className="flex items-center" onClick={() => localStorage.removeItem('authToken')}>
           <motion.img
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -178,7 +178,7 @@ const Index = () => {
               whileHover={{ scale: 1.5 }}
               className="max-lg:border-b max-lg:py-3 px-3"
             >
-              <a  href="/interior-design/" onClick={() => {
+              <a  href="/" onClick={() => {
                   localStorage.removeItem('authToken');
                   closeMenu();
                 }} className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]" >
