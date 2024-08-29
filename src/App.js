@@ -13,6 +13,11 @@ import Why from './Component/WhyChooseUs/Index'
 import Card from './Edit/Card/Index';
 import Feedback from './Edit/feedback/Index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Profile from './Edit/Profile/Index';
+import ForgetPassword from './Edit/ForgetPassword/Index';
+// import ResetPassword from './Edit/PasswordReset/Index';
+
+
 
 function App() {
   return (
@@ -46,13 +51,35 @@ function App() {
             <Footer />
           </>
         )} />} />
-        <Route path="*" element={<ProtectedRoute element={() => (
+       <Route path="*" element={
           <>
             <Header />
-           <Err/>
+            <Err />
+            <Footer />
+          </>
+       } />
+        <Route path="/profile" element={<ProtectedRoute element={() => (
+          <>
+            <Header />
+            <Profile />
             <Footer />
           </>
         )} />} />
+        <Route path="/forgot" element={
+          <>
+            <Header />
+            <ForgetPassword />
+            <Footer />
+          </>
+        }/>
+        <Route path="/Profile" element={
+          <>
+            <Head />
+            < Profile/>
+            <Footer />
+          </>
+        }/>
+        
       </Routes>
     </Router>
   );

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,19 +6,21 @@ const Index = () => {
   const navigate = useNavigate();
   const url = process.env.REACT_APP_FETCH_URL ? `${process.env.REACT_APP_FETCH_URL}signin` : "http://localhost:5000/signin";
   
-  const [mobile, setMobile] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [forgotLoading, setForgotLoading] = useState(false);
 
   const login = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(url, { mobileNo: mobile, password });
+      const response = await axios.post(url, { email: email, password });
       if (response.status === 200) {
-        const { token } = response.data;
+        const { token } = response.data;        
         if (token) {
           localStorage.setItem('authToken', token);
+          localStorage.setItem('_id', response.data.user._id);
           navigate('/home', { state: { userData: response.data, token } });
         } else {
           setError("Token not received");
@@ -27,9 +29,24 @@ const Index = () => {
         setError("Invalid response from server");
       }
     } catch (error) {
-      setError('An error occurred during login.');
+      if (error.response && error.response.data) {
+        setError(error.response.data);
+    } else {
+        setError("An error occurred during login.");
+    }
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    setForgotLoading(true);
+    try {
+      navigate('/forgot')
+    } catch (error) {
+      setError('An error occurred during password reset.');
+    } finally {
+      setForgotLoading(false);
     }
   };
 
@@ -44,12 +61,12 @@ const Index = () => {
             </p>
 
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">Mobile</label>
+              <label className="text-gray-800 text-sm mb-2 block">Email</label>
               <input
                 type="text"
                 required
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg"
                 placeholder="Enter mobile number"
               />
@@ -77,6 +94,17 @@ const Index = () => {
             >
               {loading ? "Logging in..." : "Log in"}
             </button>
+
+            <div className="text-center mt-4">
+              <button
+                type="button"
+                onClick={handleForgotPassword}
+                className="text-blue-600 hover:underline"
+                disabled={forgotLoading}
+              >
+                {forgotLoading ? "Processing..." : "Forgot Password?"}
+              </button>
+            </div>
           </form>
         </div>
         <div className="lg:h-[400px] md:h-[300px] mt-8">

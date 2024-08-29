@@ -1,25 +1,32 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../../Img/logo-4.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate ,useLocation} from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-
 const Index = () => {
+  const location = useLocation();
+  const { userData,token } = location.state || {};
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [animat, SetAnimat] = useState(false)
   const handleMenuToggle = () => {
     setIsMenuOpen(prevState => !prevState);
   };
+  const navigate = useNavigate();
 
   const handleFeedbackClick = () => {
-    
+
     closeMenu();
+  };
+  const handleProfileClick = () => {
+    closeMenu();
+    // const token = localStorage.getItem('authToken');
+    navigate("/profile", { state: { token ,userData} });
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-  };const checkScreenSize = () => {
-    if (window.innerWidth > 1000) { 
+  }; const checkScreenSize = () => {
+    if (window.innerWidth > 1000) {
       SetAnimat(true);
     } else {
       SetAnimat(false);
@@ -28,9 +35,10 @@ const Index = () => {
   useEffect(() => {
     checkScreenSize();
     console.log(animat);
-    
+
 
   }, [checkScreenSize])
+
 
 
   return (
@@ -63,7 +71,7 @@ const Index = () => {
         </a>
 
         <motion.div
-          initial={{ opacity: 0, x:animat? '-100%':'0%', scale: 0 }}
+          initial={{ opacity: 0, x: animat ? '-100%' : '0%', scale: 0 }}
           animate={{ opacity: 1, x: '0%', scale: 1 }}
           transition={{
             opacity: { duration: 0.3 },
@@ -156,15 +164,27 @@ const Index = () => {
               whileHover={{ scale: 1.5 }}
               className="max-lg:border-b max-lg:py-3 px-3"
             >
-              <Link to="/login">
-                <a
-                  href="javascript:void(0)"
-                  className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]"
-                  onClick={closeMenu}
-                >
-                  Login
-                </a>
-              </Link>
+              <div
+                className="hover:text-[#007bff] text-[#333] cursor-pointer block font-bold text-[15px]"
+                onClick={handleProfileClick}
+              >
+                Profile
+              </div>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.5 }}
+              className="max-lg:border-b max-lg:py-3 px-3"
+            >
+              <a  href="/interior-design/" onClick={() => {
+                  localStorage.removeItem('authToken');
+                  closeMenu();
+                }} className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]" >
+                Logout
+              </a>
+
             </motion.li>
           </ul>
         </motion.div>
