@@ -41,7 +41,7 @@ const Navigate=useNavigate();
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${url}/verify-otp`, { email, otp });
+      await axios.post(`${url}verify-otp`, { email, otp });
       setStep(3);
       setMessage("OTP verified. Set a new password.");
       setError('');

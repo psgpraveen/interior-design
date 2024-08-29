@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {useLocation} from 'react-router-dom'
 
@@ -53,11 +53,6 @@ const Profile = () => {
             setSuccess(' ');
         }
     };
-    useEffect(() => {
-    console.log("userdata >>>>>>>>>>",userData.user);
-    
-    }, [userData])
-    
 
     return (
         <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg">
