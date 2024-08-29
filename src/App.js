@@ -15,8 +15,7 @@ import Feedback from './Edit/feedback/Index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Profile from './Edit/Profile/Index';
 import ForgetPassword from './Edit/ForgetPassword/Index';
-// import ResetPassword from './Edit/PasswordReset/Index';
-
+import HeaderForOther from './Edit/HeaderForOther/Index'
 
 
 function App() {
@@ -38,7 +37,7 @@ function App() {
         } />
         <Route path="/login" element={
           <>
-            <Head />
+            <HeaderForOther />
             <Login />
             <Footer />
           </>
@@ -60,7 +59,7 @@ function App() {
        } />
         <Route path="/profile" element={<ProtectedRoute element={() => (
           <>
-            <Header />
+            <HeaderForOther />
             <Profile />
             <Footer />
           </>
@@ -72,13 +71,7 @@ function App() {
             <Footer />
           </>
         }/>
-        <Route path="/Profile" element={
-          <>
-            <Head />
-            < Profile/>
-            <Footer />
-          </>
-        }/>
+       
         
       </Routes>
     </Router>
