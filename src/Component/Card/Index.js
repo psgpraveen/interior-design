@@ -30,13 +30,13 @@ const fade = {
   },
 };
 
-const CategorySelector = ({ category, setCategory ,scrollToFeatured}) => {
+const CategorySelector = ({ category, setCategory ,scrollToFeatured ,setPage}) => {
   return (
     <div className="grid grid-cols-3  sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-6 gap-4 py-8">
       {categories.map((cat) => (
         <motion.div
           key={cat.value}
-          onClick={() =>{ setCategory(cat.value);scrollToFeatured();}}
+          onClick={() =>{ setCategory(cat.value); setPage(1) ;scrollToFeatured();}}
           className={`cursor-pointer text-center p-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-blue-200
           ${category === cat.value ? 'bg-blue-200' : 'bg-gray-100'}`}
           style={{ transition: 'transform 0.3s, background-color 0.3s' }}
@@ -105,7 +105,7 @@ const Index = () => {
       >
         INTERIOR GALLERY
       </motion.h2>
-      <CategorySelector category={category} setCategory={setCategory} scrollToFeatured={scrollToFeatured} />
+      <CategorySelector category={category} setCategory={setCategory} setPage={setPage} scrollToFeatured={scrollToFeatured} />
       <motion.h3
         variants={fade} id='feat'
         initial="initial"
