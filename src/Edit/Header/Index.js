@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../Img/logo-4.png';
-import { Link, useNavigate ,useLocation} from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Index = () => {
   const location = useLocation();
-  const { userData,token } = location.state || {};
+  const { userData, token } = location.state || {};
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [animat, SetAnimat] = useState(false)
   const handleMenuToggle = () => {
@@ -20,7 +20,7 @@ const Index = () => {
   const handleProfileClick = () => {
     closeMenu();
     // const token = localStorage.getItem('authToken');
-    navigate("/profile", { state: { token ,userData} });
+    navigate("/profile", { state: { token, userData } });
   };
 
   const closeMenu = () => {
@@ -61,9 +61,9 @@ const Index = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="ml-3 text-xl lg:text-2xl font-bold text-[#007bff]"
+            className="ml-3 text-xl lg:text-2xl font-extrabold text-gray-800 hover:text-blue-600 transition-colors duration-300"
           >
-           Contractor
+            Interior Contractors
           </motion.span>
         </a>
 
@@ -111,7 +111,7 @@ const Index = () => {
             >
               <a
                 href="/interior-design/"
-                className="hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]"
+                className="hover:text-[#007bff] text-[#007bff] block font-bold text-[20px]"
                 onClick={() => {
                   localStorage.removeItem('authToken');
                   closeMenu();
@@ -128,7 +128,7 @@ const Index = () => {
               className="max-lg:border-b max-lg:py-3 px-3"
             >
               <div
-                className="hover:text-[#007bff] cursor-pointer text-[#333] block font-bold text-[15px]"
+                className="hover:text-[#007bff] cursor-pointer text-[#333] block font-bold text-[20px]"
                 onClick={() => {
                   handleFeedbackClick();
                   document.getElementById("Feature").scrollIntoView({ behavior: 'smooth' });
@@ -162,7 +162,7 @@ const Index = () => {
               className="max-lg:border-b max-lg:py-3 px-3"
             >
               <div
-                className="hover:text-[#007bff] text-[#333] cursor-pointer block font-bold text-[15px]"
+                className="hover:text-[#007bff] text-[#333] cursor-pointer block font-bold text-[20px]"
                 onClick={handleProfileClick}
               >
                 Profile
@@ -175,10 +175,10 @@ const Index = () => {
               whileHover={{ scale: 1.5 }}
               className="max-lg:border-b max-lg:py-3 px-3"
             >
-              <a  href="/" onClick={() => {
-                  localStorage.removeItem('authToken');
-                  closeMenu();
-                }} className="hover:text-[#007bff] text-[#333] block font-bold text-[15px]" >
+              <a href="/" onClick={() => {
+                localStorage.removeItem('authToken');
+                closeMenu();
+              }} className="hover:text-[#007bff] text-[#333] block font-bold text-[20px]" >
                 Logout
               </a>
 

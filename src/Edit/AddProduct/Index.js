@@ -174,7 +174,7 @@ const Index = ({fetchProducts}) => {
                 <option value="Home Design">🏠 Home Design</option>
                 <option value="Furniture & Finishes">🛋️ Furniture & Finishes</option>
                 <option value="Home Stylists">💇 Home Stylists</option>
-               
+                <option value="other">🌐 Other</option>
               </select>
             </div>
             <div className="mb-4">

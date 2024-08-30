@@ -68,9 +68,9 @@ const Index = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="ml-3 text-xl lg:text-2xl font-bold text-[#007bff]"
-          >
-           Contractor
+            className="ml-3 text-xl lg:text-2xl font-extrabold text-gray-800 hover:text-blue-600 transition-colors duration-300"
+            >
+              Interior Contractors
           </motion.span>
         </a>
 
@@ -118,7 +118,7 @@ const Index = () => {
             >
               <a
                 href="/"
-                className="hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]"
+                className="hover:text-[#007bff] text-[#007bff] block font-bold text-[20px]"
                 onClick={() => {
                   localStorage.removeItem('authToken');
                   closeMenu();
@@ -137,7 +137,7 @@ const Index = () => {
               className="max-lg:border-b max-lg:py-3 px-3"
             >
               <li 
-                className="hover:text-[#007bff] text-[#333] cursor-pointer block font-bold text-[15px]"
+                className="hover:text-[#007bff] text-[#333] cursor-pointer block font-bold text-[20px]"
                onClick={back}
               >
                 Back
