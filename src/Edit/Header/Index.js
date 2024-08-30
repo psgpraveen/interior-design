@@ -145,7 +145,7 @@ const Index = () => {
               className="max-lg:border-b max-lg:py-3 px-3"
             >
               <div
-                className="hover:text-[#007bff] text-[#333] cursor-pointer block font-bold text-[15px]"
+                className="hover:text-[#007bff] text-[#333] cursor-pointer block font-bold text-[20px]"
                 onClick={() => {
                   closeMenu();
                   document.getElementById("feedback1").scrollIntoView({ behavior: 'smooth' });
