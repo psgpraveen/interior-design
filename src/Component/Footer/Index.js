@@ -128,9 +128,21 @@ const Index = () => {
 
         <div className="lg:flex lg:items-center justify-center">
           <ul className="text-gray-300 space-y-3">
-            <li>Call Us: +91 9769996745</li>
-            <li>Email: snkinterior@gmail.com</li>
-            <li>Address: Ulwe, Navi Mumbai</li>
+          <li>
+              <a variants={fade}
+
+                href="mailto:sabrunnabi@gmail.com" className="text-gray-300 hover:text-white text-sm">
+                <motion.h6 initial="initial" variants={fade}
+                  whileInView="animate"> sabrunnabi@gmail.com</motion.h6>
+              </a>
+            </li>
+            <li>
+              <motion.h5 initial="initial"
+                whileInView="animate" variants={fade} className="text-gray-300 hover:text-white text-sm">+91-9930503098 / +91-9022221616</motion.h5>
+            </li>
+            <li>
+              <a href="javascript:void(0)" target='_blank' className="text-gray-300 hover:text-white text-sm"><motion.h6 variants={fade} initial='initial' whileInView='animate'>Plot No.25-A/G/4, Rd. No.12, Govandi, Mumbai-400 043</motion.h6></a>
+            </li>
           </ul>
         </div>
       </motion.div>
