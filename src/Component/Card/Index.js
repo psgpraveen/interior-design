@@ -63,6 +63,7 @@ const Index = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
+     
       const response = await axios.get(url, {
         params: {
           category: category,
