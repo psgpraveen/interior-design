@@ -68,7 +68,7 @@ const Index = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg"
-                placeholder="Enter mobile number"
+                placeholder="Enter Email"
               />
             </div>
             

@@ -139,7 +139,7 @@ const Index = () => {
 
 
         <p className='text-gray-300 text-sm mt-10'>© Handcrafted ❤ by <a href='https://psgpraveen.github.io/port/' target='_blank'
-          className="hover:underline mx-1">PsgPraveen & Himanshu</a>
+          className="hover:underline hover:text-blue-500 mx-1">PsgPraveen & Himanshu</a>
         </p>
 
       </div>
