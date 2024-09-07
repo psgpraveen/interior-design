@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {useLocation} from 'react-router-dom'
+import { useLocation ,useNavigate} from 'react-router-dom'
 
 const Profile = () => {
-
+    const navigate = useNavigate();
     const location = useLocation();
-    const { userData } = location.state || {};
+    const { userData ,token } = location.state || {};
     const url = process.env.REACT_APP_FETCH_URL ? `${process.env.REACT_APP_FETCH_URL}profile` : "http://localhost:5000/profile";
-   const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [isEditing, setIsEditing] = useState(false);
     const [profile, setProfile] = useState({
         name: userData.user.name,
@@ -24,30 +24,45 @@ const Profile = () => {
 
     const handleEdit = () => {
         setIsEditing(!isEditing);
-        setError(''); 
-        setSuccess(''); 
+        setError('');
+        setSuccess('');
     };
 
     const handleSave = async () => {
-        try { setLoading(true)
+        try {
+            setLoading(true)
             const _id = localStorage.getItem('_id');
 
             const response = await axios.post(url, {
                 name: profile.name,
                 email: profile.email,
                 phone: profile.phone,
-              
-                _id:_id,
+
+                _id: _id,
             });
 
             if (response.status === 200) {
+
                 setSuccess('Profile updated successfully!');
+                
+                navigate('/profile', {
+                    state: {
+                        userData: {
+                            user: {
+                                name: response.data.user.name,
+                                email: response.data.user.email,
+                                mobileNo: response.data.user.mobileNo,
+                            },
+                           
+                        } ,token
+                    }
+                });
                 setIsEditing(false);
             }
         } catch (error) {
             setError('Failed to update profile. Please try again.');
             console.error('Error updating profile:', error);
-        }finally{
+        } finally {
             setLoading(false)
             setSuccess(' ');
         }
@@ -100,7 +115,7 @@ const Profile = () => {
                     <p className="text-gray-900">{profile.phone}</p>
                 )}
             </div>
-           
+
             <div className="flex justify-between">
                 <button
                     onClick={handleEdit}
@@ -113,7 +128,7 @@ const Profile = () => {
                         onClick={handleSave}
                         className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600" disabled={loading}
                     >
-                         {loading ? "Processing..." : "Save"}
+                        {loading ? "Processing..." : "Save"}
                     </button>
                 )}
             </div>
