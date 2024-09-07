@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useRef } from 'react';
 import axios from 'axios';
 import Compressor from 'compressorjs';
 
@@ -12,7 +12,7 @@ const Index = ({fetchProducts}) => {
     categories: '',
     imageFile: null,
   });
-
+  const fileInputRef = useRef(null);
   const url = process.env.REACT_APP_FETCH_URL
     ? `${process.env.REACT_APP_FETCH_URL}addproduct`
     : 'http://localhost:5000/addproduct';
@@ -90,6 +90,9 @@ const Index = ({fetchProducts}) => {
         imageFile: null,
       });
       setImagePreview(null);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ''; // Reset the file input
+      }
       fetchProducts();
     } catch (error) {
       if (error.response && error.response.data === 'Product Already Exists') {
@@ -184,6 +187,7 @@ const Index = ({fetchProducts}) => {
               <input
                 type="file"
                 id="imageFile"
+                ref={fileInputRef}
                 name="imageFile"
                 accept="image/*"
                 className="w-full bg-gray-100 rounded border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out"
