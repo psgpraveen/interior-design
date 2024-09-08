@@ -9,7 +9,7 @@ const categories = [
   { label: 'Bedroom', value: 'Bedroom', icon: '🛏️' },
   { label: 'Bathroom', value: 'Bathroom', icon: '🛁' },
   { label: 'Children\'s room', value: 'Children\'s room', icon: '🧸' },
-  { label: 'Home office', value: 'Home office', icon: '💼' },
+  { label: 'Office', value: 'Home office', icon: '💼' },
   { label: 'Interior Designs', value: 'Interior Designs', icon: '🎨' },
   { label: 'Home Design', value: 'Home Design', icon: '🏡' },
   { label: 'Furniture & Finishes', value: 'Furniture & Finishes', icon: '🛋️' },

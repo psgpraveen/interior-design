@@ -166,16 +166,17 @@ const Index = ({fetchProducts}) => {
                 onChange={handleChange}
                 required
               >
-                  <option value="">Select a category</option>
+                 <option value="">Select a category</option>
                 <option value="Living room">🛋️ Living room</option>
                 <option value="Kitchen">🍽️ Kitchen</option>
                 <option value="Bedroom">🛏️ Bedroom</option>
                 <option value="Bathroom">🚿 Bathroom</option>
                 <option value="Children's room">🧸 Children's room</option>
-                <option value="Home office">💼 Home office</option>
+                <option value="Home office">💼 Office</option>
                 <option value="Interior Designs">🎨 Interior Designs</option>
-                <option value="Home Design">🏠 Home Design</option>
+                <option value="Home Design">🏠Home Design</option>
                 <option value="Furniture & Finishes">🛋️ Furniture & Finishes</option>
+                <option value="Lounge, Parlor, Salon">💇 Lounge, Parlor, Salon</option>
                 <option value="other">🌐 Other</option>
               </select>
             </div>
