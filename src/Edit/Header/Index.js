@@ -110,7 +110,7 @@ const Index = () => {
               className="max-lg:border-b max-lg:py-3 px-3"
             >
               <a
-                href="/interior-design/"
+                href="/"
                 className="hover:text-[#007bff] text-[#007bff] block font-bold text-[20px]"
                 onClick={() => {
                   localStorage.removeItem('authToken');
