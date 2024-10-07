@@ -87,7 +87,7 @@ const Index = () => {
               initial="initial"
               whileInView="animate" viewport={{ once: true }} className="lg:w-1/2 px-6 mt-4 lg:mt-0">
               <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
-              <a href="mailto:sabrunnabi@gmail.com" className="text-blue-500 leading-relaxed">sabrunnabi@gmail.com</a>
+              <a href="mailto:Snkinteriorofficial@gmail.com" className="text-blue-500 leading-relaxed">Snkinteriorofficial@gmail.com</a>
               <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
               <p className="leading-relaxed">+91-9930503098 / +91-9022221616</p>
             </motion.div>

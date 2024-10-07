@@ -133,7 +133,7 @@ const Index = () => {
 
                 href="mailto:sabrunnabi@gmail.com" className="text-gray-300 hover:text-white text-sm">
                 <motion.h6 initial="initial" variants={fade}
-                  whileInView="animate"> sabrunnabi@gmail.com</motion.h6>
+                  whileInView="animate"> Snkinteriorofficial@gmail.com</motion.h6>
               </a>
             </li>
             <li>
