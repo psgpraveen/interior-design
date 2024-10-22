@@ -71,7 +71,7 @@ const Index = () => {
             <motion.li initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }} whileHover={{ scale: 1.5 }} className='mb-6 hidden max-lg:block'>
-              <a href="/interior-design">
+              <a href="/">
                 <img src={logo} alt="logo" className="lg:w-30 w-18 drop-shadow" />
               </a>
             </motion.li>
