@@ -22,7 +22,7 @@ function App() {
   return (
     <Router><Analytics/>
       <Routes>
-        <Route path="/psg" element={
+        <Route path="/" element={
           <>
             <Header />
             <Intro />
